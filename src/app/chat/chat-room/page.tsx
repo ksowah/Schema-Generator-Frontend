@@ -10,7 +10,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { CREATE_PROJECT, GET_CHAT, STREAM_CHAT } from "./apollo";
 import { useForm, zodResolver } from "@mantine/form";
 import { z } from "zod";
-import { conversatio3 } from "@/utils/mock-db";
+import { chatMessages } from "@/utils/mock-db";
 import SchemaVisualizer from "@/components/chat-response";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import { useUrlState } from "@/utils/use-url-state";
@@ -54,12 +54,12 @@ const ChatRoomPage = () => {
   });
 
   const handleCreateProject = async () => {
-    const lastIdx = conversatio3?.length - 1;
+    const lastIdx = chatMessages?.length - 1;
 
     const variables = {
       name: data?.chat?.name,
-      description: conversatio3[lastIdx].prompt,
-      aiResponse: conversatio3[lastIdx].message,
+      description: chatMessages[lastIdx].prompt,
+      aiResponse: chatMessages[lastIdx].message,
     }
     
     await createProject({
@@ -86,7 +86,7 @@ const ChatRoomPage = () => {
     }
 
     setTimeout(() => {
-      const mockResponse = conversatio3[currentStep];
+      const mockResponse = chatMessages[currentStep];
 
       setActiveChats((prev) => [
         ...prev,
@@ -96,7 +96,7 @@ const ChatRoomPage = () => {
         },
       ]);
 
-      if (currentStep < conversatio3.length - 1) {
+      if (currentStep < chatMessages.length - 1) {
         setCurrentStep((prev) => prev + 1);
       }
 
