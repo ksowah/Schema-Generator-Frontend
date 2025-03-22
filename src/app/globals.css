@@ -1,0 +1,6 @@
+@import "tailwind-preset-mantine";
+@import "./theme.css";
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
