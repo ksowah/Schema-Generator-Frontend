@@ -1,19 +1,88 @@
-# Next App Mantine Tailwind Template
+# AI-Powered Database Schema Generator  
+[![Live Demo](https://img.shields.io/badge/demo-live-green)](https://www.loom.com/share/00e54b19fbfd4e879e809ca1cb2c2a80?sid=b6c3c077-b66c-4cab-9258-05945dd05253)  
+![Tech Stack](https://img.shields.io/badge/stack-React%20%7C%20GraphQL%20%7C%20MongoDB%20%7C%20OpenAI-blue)  
 
-This is a minimal template for a Next.js project with Mantine v7 and Tailwind CSS v4.
+An intelligent database schema design tool that uses OpenAI to guide users through creating optimized MongoDB/NoSQL schemas through conversational interactions.  
 
-If you are looking for example with Tailwind CSS v3, you can find it at the [tw3](https://github.com/songkeys/next-app-mantine-tailwind-template/tree/tw3) branch.
+## Features  
+- 🧠 OpenAI-guided schema design process  
+- 💬 Interactive chat interface with message history  
+- 🗃️ Automatic MongoDB schema generation  
+- 🔄 Real-time schema visualization  
+- 📁 Project versioning and persistence  
+- 📱 Mobile-responsive UI  
 
-## Development
+## Technology Stack  
+**Frontend**  
+- Next.js 14 (App Router)  
+- Apollo Client (GraphQL management)  
+- Mantine UI component library  
+- Zod for schema validation  
 
-Run the development server:
+**Backend**  
+- GraphQL API with Apollo Server  
+- Mongoose ODM for MongoDB  
+- OpenAI GPT-4 API integration  
 
-```bash
-npm run dev
+**Database**  
+- MongoDB Atlas with optimized indexing  
+
+## Implementation Details  
+
+### AI Integration Architecture  
+```typescript
+// Core AI interaction flow
+const generateSchema = async (conversationHistory: Message[]) => {
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4",
+    messages: [
+      {
+        role: "system",
+        content: `You are a MongoDB expert. Guide the user through schema design by asking 1 question at a time. 
+        Final output must be JSON with this structure:
+        {
+          "schema": {
+            "collection": {
+              "fields": {"name": "type"},
+              "indexes": ["field"]
+            }
+          }
+        }`
+      },
+      ...conversationHistory
+    ],
+    temperature: 0.7,
+    max_tokens: 500
+  });
+
+  const response = completion.choices[0].message.content;
+  const schema = extractJSON(response); 
+  return schema;
+};
 ```
 
-## More information
+# Environment Setup Guide
 
-- [Mantine](https://mantine.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [tailwind-preset-mantine](https://github.com/songkeys/tailwind-preset-mantine)
+## Prerequisites
+- **Node.js v18** or higher ([Download](https://nodejs.org/))
+- **MongoDB Atlas** account ([Sign Up](https://www.mongodb.com/atlas))
+- **OpenAI API Key** ([Get Key](https://platform.openai.com/api-keys))
+- Git (for cloning repository)
+
+---
+
+## Installation Steps
+
+### 1. Clone Repository
+
+## Frontend
+```bash
+git clone https://github.com/ksowah/Schema-Generator-Frontend.git
+cd Schema-Generator-Frontend
+```
+
+## Backend
+```bash
+git clone https://github.com/ksowah/DB.git
+cd DB
+```

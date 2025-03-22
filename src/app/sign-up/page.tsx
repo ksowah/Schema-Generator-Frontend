@@ -143,7 +143,7 @@ export default function SignUpPage() {
       </div>
 
       {/* Right Side (Branding Section) */}
-      <div className="hidden md:flex flex-col items-center justify-center h-full w-full bg-[url('/assets/some-bg.jpg')] bg-cover bg-center relative rounded-bl-[10rem] overflow-hidden">
+      <div className="hidden md:flex flex-col items-center justify-center h-full w-full bg-[url('/assets/schema.webp')] bg-cover bg-center relative rounded-bl-[10rem] overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-primary/10 z-10"></div>
         <Image
           src="/assets/logo-white.svg"
