@@ -16,7 +16,7 @@ const ChatPage = () => {
 
   useEffect(() => {
    refetch()
-  }, [])
+  }, [refetch])
 
   return (
     <Container>

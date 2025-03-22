@@ -13,7 +13,7 @@ import React, { FC } from "react";
 type HeaderProps = {
   opened: boolean;
   toggle: () => void;
-  renderActions?: FC<{}>;
+  renderActions?: FC<unknown>;
 };
 const Header = ({ opened, toggle, renderActions }: HeaderProps) => {
   return (

@@ -112,7 +112,7 @@ export default function Home() {
                   onChange={() => setRememberMe(!rememberMe)}
                 />
                 <div className="text-sm dark:text-primary-200">
-                  Don't have an Account?{" "}
+                  Don&apos;t have an Account?{" "}
                   <span
                     onClick={() => router.push("/sign-up")}
                     className="cursor-pointer text-primary-800 hover:underline"

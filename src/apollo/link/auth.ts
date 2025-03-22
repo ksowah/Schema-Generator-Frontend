@@ -5,7 +5,7 @@ import { onError } from "@apollo/client/link/error";
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   // check if token has been cached
-  let authorization = currentTokenVar();
+  const authorization = currentTokenVar();
   // add the authorization to the headers
   operation.setContext(({ headers = {} }) => ({
     headers: {
