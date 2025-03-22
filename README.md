@@ -1,5 +1,7 @@
 # AI-Powered Database Schema Generator  
 https://www.loom.com/share/00e54b19fbfd4e879e809ca1cb2c2a80?sid=b6c3c077-b66c-4cab-9258-05945dd05253
+
+
 ![Tech Stack](https://img.shields.io/badge/stack-React%20%7C%20GraphQL%20%7C%20MongoDB%20%7C%20OpenAI-blue)  
 
 An intelligent database schema design tool that uses OpenAI to guide users through creating optimized MongoDB/NoSQL schemas through conversational interactions.  
@@ -79,10 +81,25 @@ const generateSchema = async (conversationHistory: Message[]) => {
 ```bash
 git clone https://github.com/ksowah/Schema-Generator-Frontend.git
 cd Schema-Generator-Frontend
+
+npm install
 ```
 
 ## Backend
 ```bash
 git clone https://github.com/ksowah/DB.git
 cd DB
+
+npm install
 ```
+
+## Configure Environment Variables For Frontend
+```bash
+NEXT_PUBLIC_APOLLO_URI=
+NEXT_PUBLIC_DOMAIN=
+
+## Configure Environment Variables For Backend
+```bash
+DEEPSEEK_KEY=
+MONGODB_URI=
+MONGODB_DATABASE=
