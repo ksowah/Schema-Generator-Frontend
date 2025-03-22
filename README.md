@@ -1,5 +1,5 @@
 # AI-Powered Database Schema Generator  
-[![Live Demo](https://img.shields.io/badge/demo-live-green)](https://www.loom.com/share/00e54b19fbfd4e879e809ca1cb2c2a80?sid=b6c3c077-b66c-4cab-9258-05945dd05253)  
+https://www.loom.com/share/00e54b19fbfd4e879e809ca1cb2c2a80?sid=b6c3c077-b66c-4cab-9258-05945dd05253
 ![Tech Stack](https://img.shields.io/badge/stack-React%20%7C%20GraphQL%20%7C%20MongoDB%20%7C%20OpenAI-blue)  
 
 An intelligent database schema design tool that uses OpenAI to guide users through creating optimized MongoDB/NoSQL schemas through conversational interactions.  
